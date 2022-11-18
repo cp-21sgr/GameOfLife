@@ -1,0 +1,33 @@
+﻿<Window x:Class="GameOfLife.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GameOfLife"
+        mc:Ignorable="d"
+        Title="Game of life" Height="450" Width="800" Loaded="Window_Loaded" WindowState="Maximized" WindowStyle="None">
+    <DockPanel Margin="2" x:Name="AppPanel" HorizontalAlignment="Stretch">
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="0,0,0,2">
+            <Button Content="Start" x:Name="btnStart" Click="btnStart_Click" Margin="0,0,6,0"></Button>
+            <Button Content="Stop" x:Name="btnStop" Click="btnStop_Click"  Margin="0,0,6,0" IsEnabled="false"></Button>
+            <Button Content="Reset" x:Name="btnReset" Click="btnReset_Click"  Margin="0,0,6,0"></Button>
+            <TextBlock Text="Live Cells: "></TextBlock>
+            <TextBlock Text="0" x:Name="lblLiveCells"></TextBlock>
+            <Button Content="Speed" x:Name="speed" Click="btnSpeed_Click" Margin="20,0,6,0"></Button>
+            <TextBlock Text="Current speed : x"></TextBlock>
+            <TextBlock Text="1" x:Name="CurrentSpeed"></TextBlock>
+            <Button Content="Random" x:Name="random" Click="btnRandom_Click" Margin="20,0,6,0"></Button>
+        </StackPanel>
+        <ScrollViewer>
+            <Canvas x:Name="cBoard"  Width="1000" Height="1000" Margin="20"></Canvas>
+        </ScrollViewer>
+        <Canvas x:Name="smlBoard" Width="100" Height="100" Margin="20" VerticalAlignment="Top"/>
+            <StackPanel>
+                <Button x:Name="smlBoardLock" Content="Lock" Click="OnLock_Click" Margin="0, 27, 0, 0"/>
+                <Button x:Name="smlBoardReset" Content="Reset" Click="btnsmlReset_Click" Margin="0, 10, 0, 0"/>
+                <Button x:Name="savePattern" Content="Save" Click="btnSave_Click" Margin="0, 10, 0, 0"/>
+                <Button x:Name="LoadPattern" Content="Load" Click="btnLoad_Click" Margin="0, 10, 0, 0"/>
+            </StackPanel>
+            <Label x:Name="Test_sb"/>
+    </DockPanel>
+</Window>
